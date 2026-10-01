@@ -34,7 +34,7 @@ const ToggleButton = ({ data }: ToggleButtonProps) => {
 
       {/* Panel lateral */}
       <div
-        className={`fixed top-0 right-0 w-[90vw] h-full bg-white shadow-md transform transition-transform duration-500 ease-in-out overflow-y-scroll content_scroll z-50 ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 w-[30vw] h-full bg-white shadow-md transform transition-transform duration-500 ease-in-out overflow-y-scroll content_scroll z-50 ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <i
@@ -44,12 +44,10 @@ const ToggleButton = ({ data }: ToggleButtonProps) => {
             aria-hidden={true}
           ></i>
         {/* Contenido del panel */}
-        <CleaningCostCalculator
-          businessName={data.name}
-          phoneNumber={data.dataGeneral.phones[0].number}
-          recipientEmails={data.dataGeneral.emails.map((item) => item.email)}
-          logo={data.logos.primary}
-        />
+        <div className="p-8">
+          <h2 className="text-2xl font-bold mb-4 text-center">Request a Quote</h2>
+          <Form data={data} />
+        </div>
       </div>
     </div>
   );
