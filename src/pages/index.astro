@@ -18,6 +18,7 @@ import BusinessCard from "../components/global/BusinessCard";
 import ButtonContent from "../components/buttons/Buttons";
 import BlockAbout from "../components/about/BlockAbout";
 import CleaningCostCalculator from "../components/calculatorCost/CleaningCostCalculator";
+import PostComponent from "../components/home/PostComponent";
 
 let API_URL = import.meta.env.API_URL;
 // Realiza la llamada a la API
@@ -60,7 +61,7 @@ const aboutSection = data?.sectionsHomeAbout.filter(
   <BannerHome data={data} />
 
   <ValuesAbout data={data} client:load />
-
+  <PostComponent dataBlocks={dataBlocks} data={data} client:load />
   <Directorios client:only data={data} />
 
   {
